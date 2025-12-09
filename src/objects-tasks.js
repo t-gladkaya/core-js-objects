@@ -236,8 +236,13 @@ function fromJSON(/* proto, json */) {
  *      { country: 'Russia',  city: 'Saint Petersburg' }
  *    ]
  */
-function sortCitiesArray(/* arr */) {
-  throw new Error('Not implemented');
+function sortCitiesArray(arr) {
+  return arr.slice().sort((a, b) => {
+    if (a.country === b.country) {
+      return a.city.localeCompare(b.city);
+    }
+    return a.country.localeCompare(b.country);
+  });
 }
 
 /**
@@ -373,9 +378,9 @@ module.exports = {
   makeWord, // done
   sellTickets,
   Rectangle,
-  getJSON,
+  getJSON, // done
   fromJSON,
   group,
-  sortCitiesArray,
+  sortCitiesArray, // done
   cssSelectorBuilder,
 };
