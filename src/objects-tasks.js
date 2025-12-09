@@ -17,8 +17,9 @@
  *    shallowCopy({a: 2, b: { a: [1, 2, 3]}}) => {a: 2, b: { a: [1, 2, 3]}}
  *    shallowCopy({}) => {}
  */
-function shallowCopy(/* obj */) {
-  throw new Error('Not implemented');
+function shallowCopy(obj) {
+  const empty = {};
+  return Object.assign(empty, obj);
 }
 
 /**
@@ -369,7 +370,7 @@ const cssSelectorBuilder = {
 };
 
 module.exports = {
-  shallowCopy,
+  shallowCopy, // done
   mergeObjects, // done
   removeProperties, // done
   compareObjects, // done
