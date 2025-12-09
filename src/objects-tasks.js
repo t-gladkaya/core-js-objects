@@ -87,8 +87,8 @@ function compareObjects(obj1, obj2) {
  *    isEmptyObject({}) => true
  *    isEmptyObject({a: 1}) => false
  */
-function isEmptyObject(/* obj */) {
-  throw new Error('Not implemented');
+function isEmptyObject(obj) {
+  return Object.keys(obj).length === 0;
 }
 
 /**
@@ -350,9 +350,9 @@ const cssSelectorBuilder = {
 module.exports = {
   shallowCopy,
   mergeObjects,
-  removeProperties,
-  compareObjects,
-  isEmptyObject,
+  removeProperties, // done
+  compareObjects, // done
+  isEmptyObject, // done
   makeImmutable,
   makeWord,
   sellTickets,
